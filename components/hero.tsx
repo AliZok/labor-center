@@ -18,7 +18,7 @@ export function Hero() {
   }
 
   return (
-    <section className="relative overflow-hidden bg-primary py-20 md:py-32">
+    <section className="relative overflow-hidden bg-primary h-screen flex items-center justify-center">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-4xl text-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-primary-foreground/10 px-4 py-2 text-sm text-primary-foreground">

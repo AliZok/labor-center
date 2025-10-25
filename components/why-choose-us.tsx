@@ -35,7 +35,7 @@ export function WhyChooseUs() {
               />
             </div>
             <div className="absolute -bottom-6 -right-6 rounded-xl bg-accent p-6 text-accent-foreground shadow-xl">
-              <div className="text-4xl font-bold font-[family-name:var(--font-heading)]">15+</div>
+              <div className="text-4xl font-bold font-[family-name:var(--font-heading)]">5+</div>
               <div className="text-sm">{t.yearsOfExperience}</div>
             </div>
           </div>
