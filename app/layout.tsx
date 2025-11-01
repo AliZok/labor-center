@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   title: "Professional Labor Services | Skilled Workers Center",
   description: "Quality labor and worker services for your projects. Experienced professionals ready to help.",
   generator: "v0.app",
+  other: {
+    "font-link": "https://cdn.fontcdn.ir/css?v=4.2.1&file=IRANSans.css",
+  },
 }
 
 export default function RootLayout({
@@ -29,6 +32,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdn.fontcdn.ir/css?v=4.2.1&file=IRANSans.css"
+        />
+      </head>
       <body className={`${inter.variable} ${workSans.variable} font-sans antialiased`}>
         <LanguageProvider>{children}</LanguageProvider>
         <Analytics />
