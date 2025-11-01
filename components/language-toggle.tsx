@@ -13,7 +13,7 @@ import type { Language } from "@/lib/translations"
 export function LanguageToggle() {
   const { language, setLanguage } = useLanguage()
 
-  const languages: Language[] = ["en", "hy", "fa"]
+  const languages: Language[] = ["en", "hy", "fa", "ru"]
 
   const getLanguageLabel = (lang: Language) => {
     switch (lang) {
@@ -23,6 +23,8 @@ export function LanguageToggle() {
         return "🇦🇲 Հայերեն"
       case "fa":
         return "🇮🇷 فارسی"
+      case "ru":
+        return "🇷🇺 Русский"
       default:
         return lang
     }
