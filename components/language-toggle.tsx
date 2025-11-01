@@ -1,6 +1,12 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 import { useLanguage } from "@/contexts/language-context"
 import type { Language } from "@/lib/translations"
 
@@ -8,8 +14,6 @@ export function LanguageToggle() {
   const { language, setLanguage } = useLanguage()
 
   const languages: Language[] = ["en", "hy", "fa"]
-  const currentIndex = languages.indexOf(language)
-  const nextLanguage = languages[(currentIndex + 1) % languages.length]
 
   const getLanguageLabel = (lang: Language) => {
     switch (lang) {
@@ -25,13 +29,20 @@ export function LanguageToggle() {
   }
 
   return (
-    <Button
-      variant="outline"
-      size="sm"
-      onClick={() => setLanguage(nextLanguage)}
-      className="fixed top-4 right-4 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
-    >
-      {getLanguageLabel(language)}
-    </Button>
+    <Select value={language} onValueChange={(value) => setLanguage(value as Language)}>
+      <SelectTrigger
+        size="sm"
+        className="fixed top-4 right-4 z-50 w-fit bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+      >
+        <SelectValue placeholder={getLanguageLabel(language)} />
+      </SelectTrigger>
+      <SelectContent>
+        {languages.map((lang) => (
+          <SelectItem key={lang} value={lang}>
+            {getLanguageLabel(lang)}
+          </SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
   )
 }
