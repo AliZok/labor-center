@@ -27,7 +27,9 @@ export function ContactSection() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground">+374 XX XXX XXX</p>
+              <a href="tel:+37477964604" className="text-muted-foreground hover:text-primary transition-colors">
+                +374 77 964 604
+              </a>
               <p className="text-sm text-muted-foreground">{t.phoneHours}</p>
             </CardContent>
           </Card>
